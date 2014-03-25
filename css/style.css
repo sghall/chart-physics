@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  }
+
+body:after {
+  content: 'Original demo by MrDoob';
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2px;
+  color: #ccc;
+  font-size: 12px;
+}
+
+button {
+  height: 29px;
+  padding: 0 8px 1px 8px;
+  color: #444;
+  background-color: #f4f4f4;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #222;
+  background-color: #f8f8f8;
+  border: 1px solid #c6c6c6;
+  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,.15);
+  box-shadow: 0 1px 0 rgba(0,0,0,.15);
+}
+
+#header {
+  position: absolute;
+  top: 15px;
+  right: 0px;
+}
+
+#header a {
+  color: #444;
+  font-size: 13px;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+#header a:hover {
+  text-decoration: underline;
+}
+
+#header img {
+  vertical-align: middle;
+}
+
+#header button {
+  margin-right: 15px;
+}
+
+#content {
+  width: 100%;
+  text-align: center;
+  margin-top: 192px;
+  white-space: nowrap;
+}
+
+#content #logo {
+  margin-bottom: 17px;
+}
+
+#content input {
+  width: 560px;
+  padding: 5px 8px;
+  margin-bottom: 16px;
+  font: 16px Arial, sans-serif;
+  border: 1px solid rgba(0,0,0,.15);
+  color: #000000;
+}
+
+#content input:hover {
+  border-color: rgba(0,0,0,.3);
+}
+
+#content input:focus {
+  outline: 0; /* this removes browser-side outline */
+  border-color: #4d90fe;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  font-size: 13px;
+  border-spacing:0;
+  white-space: nowrap;
+}
+
+#footer td {
+  border-top: 1px solid #e4e4e4;
+  padding: 12px 17px;
+  background-color: #f2f2f2;
+}
+
+#footer td.empty {
+  padding: 10px 0;
+}
+
+#footer a {
+  color: #666;
+  text-decoration: none;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+}
+
+.result {
+  width: 546px;
+}
+
+.result .title {
+  color: #2200C1;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.result .title a:active {
+  color: #2200C1;
+}
+
+.result .url {
+  color: #0e774a;
+  font-size: 13px;
+}
+
+.result .content {
+  font-size: 13px;
+}
