@@ -24,6 +24,12 @@
       <script type="text/javascript">
         var data = d3.range(10);
 
+        Physijs.scripts.worker = 'lib/physijs_worker.js';
+        Physijs.scripts.ammo = 'ammo.js';
+
+        var scene = new Physijs.Scene;
+            scene.setGravity(new THREE.Vector3(0, -50, 0));
+
         console.log(data);
 
         var container = d3.select("#viewport");
@@ -41,7 +47,27 @@
                   .attr("cx", 50)
                   .attr("cy", 50)
               })
+              .each(setData)
+              .each(createCSS3D)
 
+        console.log(scene);
+
+        function setData (d) {
+          var obj = {value: d};
+          var random = new THREE.Object3D();
+          random.position.x = Math.random() * 4000 - 2000;
+          random.position.y = Math.random() * 4000 - 2000;
+          random.position.z = Math.random() * 4000 - 2000;
+          obj['random'] = random;
+
+          d3.select(this).datum(obj);
+        }
+
+        function createCSS3D(d) {
+          var object = new THREE.CSS3DObject(this);
+          object.position = d.random.position;
+          scene.add(object);
+        }
 
       </script>
     </body>
