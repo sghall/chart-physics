@@ -24,6 +24,27 @@
       <script type="text/javascript">
         var data = d3.range(10);
 
+        // Physijs.PlaneMesh
+        Physijs.CSS3DPlane = function ( geometry, material, mass ) {
+            var width, height;
+
+            Physijs.Mesh.call( this, geometry, material, mass );
+
+            if ( !geometry.boundingBox ) {
+                geometry.computeBoundingBox();
+            }
+
+            width = geometry.boundingBox.max.x - geometry.boundingBox.min.x;
+            height = geometry.boundingBox.max.y - geometry.boundingBox.min.y;
+
+            this._physijs.type = 'plane';
+            this._physijs.normal = geometry.faces[0].normal.clone();
+            this._physijs.mass = (typeof mass === 'undefined') ? width * height : mass;
+        };
+        Physijs.PlaneMesh.prototype = new Physijs.Mesh;
+        Physijs.PlaneMesh.prototype.constructor = Physijs.PlaneMesh;
+
+
         Physijs.scripts.worker = 'lib/physijs_worker.js';
         Physijs.scripts.ammo = 'ammo.js';
 
@@ -64,8 +85,9 @@
         }
 
         function createCSS3D(d) {
-          var object = new THREE.CSS3DObject(this);
+          var object = new Physijs.CSS3DPlane(this);
           object.position = d.random.position;
+          console.log(this.getBBox())
           scene.add(object);
         }
 
