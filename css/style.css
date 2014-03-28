@@ -42,6 +42,18 @@ button:hover {
   box-shadow: 0 1px 0 rgba(0,0,0,.15);
 }
 
+#chart1 {
+  position: absolute;
+  top: 15px;
+  left: -1000px;
+}
+
+#chart2 {
+  position: absolute;
+  top: 45px;
+  left: -50px;
+}
+
 #header {
   position: absolute;
   top: 15px;
