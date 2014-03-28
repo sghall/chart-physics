@@ -4,6 +4,16 @@
       <title>Rigid body - Physijs</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+      <style type="text/css">
+        svg {
+          background-color: blue;
+          margin: 10px;
+        }
+        circle {
+          fill: tomato;
+          opacity: .7;
+        }
+      </style>
     </head>
     <body>
       <div id="viewport"></div>
@@ -15,6 +25,22 @@
         var data = d3.range(10);
 
         console.log(data);
+
+        var container = d3.select("#viewport");
+
+        container.selectAll(".chart")
+          .data(data).enter()
+            .append("svg")
+              .attr("class", "chart")
+              .attr("height", "100px")
+              .attr("width", "100px")
+              .attr("id", function (d) { return "chart-" + d; })
+              .each(function () {
+                d3.select(this).append("circle")
+                  .attr("r", function (d) { return d * 5; })
+                  .attr("cx", 50)
+                  .attr("cy", 50)
+              })
 
 
       </script>
